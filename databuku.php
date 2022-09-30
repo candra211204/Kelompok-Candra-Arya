@@ -31,6 +31,7 @@ include "config.php";
                 <th>Cover</th>
                 <th>Sinopsis</th>
                 <th>Stok</th>
+                <th>Aksi</th>
 
                 </tr>
 
@@ -51,6 +52,8 @@ include "config.php";
                         <td><?= $data['cover'] ?></td>
                         <td><?= $data['sinopsis'];  ?></td>
                         <td><?= $data['stok'];  ?></td>
+                        <td><a href="edit.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Edit</button></a></td>
+                        <td><a href="delete.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>
                 <?php
                 }
@@ -60,5 +63,8 @@ include "config.php";
 
            
     </div> 
+
+    <script src="assets\bootstrap\js\bootstrap.bundle.js"></script>
+    <script src="assets\bootstrap\css\bootstrap.min.css"></script>
 </body>
 </html>

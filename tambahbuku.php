@@ -78,8 +78,8 @@ include 'config.php'
 
 if (isset($_POST['submit'])) {
     $id = $_POST['id_buku'];
-    $judul = $_POST['penulis'];
-    $tahun = $_POST['tahun'];
+	$penulis = $_POST['penulis'];
+	$tahun = $_POST['tahun'];
     $judul = $_POST['judul'];
     $kota = $_POST['kota'];
     $penerbit = $_POST['penerbit'];
@@ -87,12 +87,13 @@ if (isset($_POST['submit'])) {
     $sinopsis = $_POST['sinopsis'];
     $stok = $_POST['stok'];
 
-    $query_insert = mysqli_query($conn, "INSERT INTO buku VALUES 
-    ('$id', '$judul', '$penulis', '$tahun', '$judul', '$kota', '$penerbit', '$cover', '$sinopsis', '$stok' )");
-
-    echo "<script>alert('Data telah disimpan');
-        document.location='databuku.php'</script>";
-
+    $query_insert = mysqli_query($conn, "INSERT INTO buku VALUES ('$id','$penulis','$tahun','$judul','$kota','$penerbit', '$cover', '$sinopsis', '$stok' )");
+    
+	?>
+	<script>
+		window.location.href = "databuku.php";
+	</script>
+	<?php
 
 }
 ?>
