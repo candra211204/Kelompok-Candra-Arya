@@ -2,33 +2,29 @@
 include 'config.php';
 session_start();
 
-
 if (isset($_POST['submit'])) {
 
-$nama = $_POST['name'];
-$password = $_POST['password'];
-
-$sql = "SELECT * FROM siswa join `role` on  siswa.role = role.id WHERE nama = '$nama' AND password = '$password' ";
-$result = mysqli_query($db,$sql);
-$data = mysqli_fetch_assoc($result);
-
-    if ($data){
+    $nama = $_POST['nama'];
+    $password = $_POST['password'];
+    $query ="SELECT * FROM siswa join `role` on siswa.role = role.id WHERE nama = '$nama' AND password = '$password' ";
+    $sql = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($sql);
+    if ($data) {
         $_SESSION['nama'] = $data['nama'];
         $_SESSION['role'] = $data['role'];
-        header('location:beranda.php')
-    }else {
-        header('location: login.php');
-
+        header('location:beranda.php');
+    }else{
+        echo "<script>alert('username salah')</script>";
     }
-
 }
-
-if (isset($_SESSION['nama'])){
+if (isset($_SESSION['nama'])) {
 
     header("Location: beranda.php");
+
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
