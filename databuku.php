@@ -18,6 +18,7 @@ include "config.php";
     <div class="container mt-4 ">
         <h1 class="text-center"> DATA BUKU</h1>
         <a href="tambahbuku.php"class="btn btn-primary"> Tambah Buku</a>
+        <a href="beranda.php"class="btn btn-primary"> Kembali</a>
         <table class="table table-striped table-hover">
 
             <thead>
@@ -31,6 +32,7 @@ include "config.php";
                 <th>Cover</th>
                 <th>Sinopsis</th>
                 <th>Stok</th>
+                <th>Status</th>
                 <th>Aksi</th>
 
                 </tr>
@@ -52,6 +54,8 @@ include "config.php";
                         <td><?= $data['cover'] ?></td>
                         <td><?= $data['sinopsis'];  ?></td>
                         <td><?= $data['stok'];  ?></td>
+                        <td><?=$data['status']; ?></td>
+                        <td><a href="peminjaman.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Pinjam</button></a></td>
                         <td><a href="edit.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Edit</button></a></td>
                         <td><a href="delete.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>

@@ -35,7 +35,11 @@ session_start();
     
     </nav>
     <div class="container">
-    <?php echo $_SESSION['role']; ?>
+
+    <a href="databuku.php"><button  class="btn btn-primary" >list buku</button></a>
+
+
+    <a href="pengembalian.php"><button  class="btn btn-primary" >Pengembalian</button></a>
 </div>
 
     <script src="assets\bootstrap\js\bootstrap.bundle.js"></script>
