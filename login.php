@@ -33,10 +33,11 @@ if (isset($_SESSION['nama'])) {
     <title>Login</title>
     <link rel="stylesheet" href="assets\bootstrap\css\bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="logo/css/all.min.css">
 </head>
 <body>
-<div class="container border border-dark rounded bg-secondary bg-opacity-10" style="margin-top:20px; padding:10px">
+<!-- <div class="container border border-dark rounded bg-secondary bg-opacity-10" style="margin-top:20px; padding:10px">
     <h2>Silahkan login</h2>
     <form method="POST" action="">
         <div class="mb-3">
@@ -53,12 +54,33 @@ if (isset($_SESSION['nama'])) {
     </form>
     <a href="daftar.php"><button name="submit" type="submit" class="btn btn-primary">Register</button>
         <label class="form-label" ></label>
+    </div> -->
+<div class="tombol-kembali">
+    <a href="" class="btn btn-outline-primary rounded-pill kembali"><b>BACK</b></a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 ilustrasi">
+            <img src="assets/ilustrasi/login.svg" alt="" width="500">
+        </div>
+        <div class="col-md-5 login text-center">
+            <h2 class="silahkan-login"><b>SILAHKAN LOGIN</b></h2>
+            <br>
+            <form method="POST" action="">
+                <input type="text" class="form-control rounded-pill" name="email" placeholder="Email..">
+                <br>
+                <input type="password" class="form-control rounded-pill" name="password" placeholder="Password..">
+                <br>
+                <a href="" class="btn btn-outline-primary rounded-pill tombol-login">LOGIN</a>
+            </form>
+        </div>
     </div>
+</div>
 
 <script src="assets\bootstrap\js\bootstrap.bundle.js"></script>
-    <script src="assets\bootstrap\css\bootstrap.min.css"></script>
+<script src="assets\bootstrap\css\bootstrap.min.css"></script>
 
-    <div class="container container-kartu">
+    <!-- <div class="container container-kartu">
         <div class="row">
             <div class="col-md-6 gambar-ilustrasi">
                 <img src="assets/bootstrap/gambar/gambarlogin.png" alt="" width="500">
@@ -87,7 +109,7 @@ if (isset($_SESSION['nama'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     
 </body>

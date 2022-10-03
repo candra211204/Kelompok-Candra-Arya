@@ -1,8 +1,8 @@
 <?php
 session_start();
- include "config.php";
- ?>
- 
+include "config.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,29 +20,18 @@ session_start();
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="admin_home.php">Bootcamp</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="d-flex ms-auto" >
-            <!-- <input class="form-control me-2" name="search" type="search" placeholder="Search By Name" aria-label="Search"> -->
-            
-            <a href="logout.php"><button class="btn btn-danger" type="submit">Logout</button></a>
-            <br>
-        
-    </div>
-        </div>
+            <div class="d-flex ms-auto" >
+                <a href="logout.php"><button class="btn btn-danger" type="submit">Logout</button></a>
             </div>
-    
-    </nav>
+        </div>
+    </div>
+</nav>
     <div class="container">
-
     <a href="databuku.php"><button  class="btn btn-primary" >list buku</button></a>
-
-
     <a href="pengembalian.php"><button  class="btn btn-primary" >Pengembalian</button></a>
 </div>
-
     <script src="assets\bootstrap\js\bootstrap.bundle.js"></script>
     <script src="assets\bootstrap\css\bootstrap.min.css"></script>
 </body>

@@ -41,10 +41,11 @@ if (isset($_SESSION['nama'])) {
     <title>Daftar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="assets\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="daftar.css">
 </head>
 <body>
 
-    <div class="container border border-dark rounded bg-primary bg-opacity-10" style="margin-top:20px; padding:20px">
+    <!-- <div class="container border border-dark rounded bg-primary bg-opacity-10" style="margin-top:20px; padding:20px">
     <h2>Silahkan melengkapi form berikut untuk melakukan pendaftaran</h2>
     <form method="POST" action="">
 
@@ -94,7 +95,43 @@ if (isset($_SESSION['nama'])) {
         ?>
     </form>
     
-    </div> 
+    </div>  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ilustrasi">
+                    <img src="assets/ilustrasi/daftar.svg" alt="" width="500">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="isi-daftar text-center">
+                    <h3 class="judul-daftar"><b>SILAHKAN DAFTAR</b></h3>
+                    <form method="POST" action="">
+                        <input type="text" class="form-control rounded-pill" name="nis" placeholder="NIS">
+                        <br>
+                        <input type="text" class="form-control rounded-pill" name="nama" placeholder="Nama">
+                        <br>
+                        <input required type="password" class="form-control rounded-pill" name="password" placeholder="Pasword" id="myInput">
+                        <br>
+                        <input required type="password" class="form-control rounded-pill" name="password2" placeholder="Re-Type Password"  id="myInput2">
+                        <br>
+                        <input type="checkbox" onclick="myFunction()" class="cekbok" id="cekbok">&nbsp;
+                        <label for="cekbok" class="label-cekbok">Show Password</label>
+                        <br>
+                        <input name="jenis_kelamin"type="radio"  value="L" class="laki">L
+                        <input name="jenis_kelamin" type="radio" value="P" class="perempuan">P
+                        <br>
+                        <input type="text" class="form-control rounded-pill" name="alamat" placeholder="Alamat">
+                        <br>
+                        <input type="text" class="form-control rounded-pill" name="id_kelas" placeholder="ID Kelas">
+                        <br>
+                        <a href="" class="btn btn-outline-primary rounded-pill">SUBMIT</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         function myFunction() {

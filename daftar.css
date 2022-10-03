@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+.judul-daftar{
+    color: blue;
+}
+
+.cekbok{
+    color: blue;
+    position: relative;
+    right: 180px;
+}
+
+.label-cekbok{
+    position: relative;
+    color: blue;
+    font-weight: bold;
+    right: 180px;
+}
