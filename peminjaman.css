@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.judul{
+    color: lightskyblue;
+}
+
+.kembali:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.pinjam:hover{
+    transition: 1s;
+    transform: translateY(-5px);
+}

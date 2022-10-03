@@ -1,0 +1,13 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.kembali:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.submit:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}

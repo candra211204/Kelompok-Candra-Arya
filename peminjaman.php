@@ -9,15 +9,17 @@ include "config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Buku Perpustakaan</title>
+    <title>Detail Peminjaman</title>
+    <link rel="stylesheet" href="peminjaman.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="assets\bootstrap\css\bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-4 ">
-        <h1 class="text-center"> DATA BUKU</h1>
-        <a href="databuku.php"class="btn btn-primary"> Kembali</a>
-        <table class="table table-striped table-hover">
+        <h1 class="text-center judul">DETAIL BUKU</h1>
+        <a href="databuku.php"class="btn btn-outline-primary rounded-pill kembali"> Kembali</a>
+        <br><br>
+        <table class="table text-center table-dark text-light">
 
             <thead>
                 <tr>
@@ -53,7 +55,7 @@ include "config.php";
                         <td><?= $data['stok'];  ?></td>
                         <td>
                             <form action="" method="post">
-                                <button class="btn btn-primary" type="submit" name="submit">Pinjam</button>
+                                <button class="btn btn-outline-primary rounded-pill pinjam" type="submit" name="submit">Pinjam</button>
                             </form>
                         </td>
                 

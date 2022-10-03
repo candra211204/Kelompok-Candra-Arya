@@ -1,21 +1,46 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+}
+
+.kembali{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.kembali:hover{
+    transition: 1s;
+    transform: translateY(10px);
+}
+
+.ilustrasi{
+    position: relative;
+    top: 100px;
+}
+
+.isi-daftar{
+    color: grey;
+    position: relative;
+    top: 25px;
 }
 
 .judul-daftar{
-    color: blue;
+    color: lightskyblue;
 }
 
-.cekbok{
-    color: blue;
+.cek-password{
+    color: grey;
     position: relative;
     right: 180px;
 }
 
-.label-cekbok{
+.show-password{
     position: relative;
-    color: blue;
-    font-weight: bold;
+    color: grey;
     right: 180px;
+}
+
+.tombol-submit:hover{
+    transition: 1s;
+    transform: translateY(-10px);
 }

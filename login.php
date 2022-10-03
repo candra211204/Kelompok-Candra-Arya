@@ -56,7 +56,7 @@ if (isset($_SESSION['nama'])) {
         <label class="form-label" ></label>
     </div> -->
 <div class="tombol-kembali">
-    <a href="" class="btn btn-outline-primary rounded-pill kembali"><b>BACK</b></a>
+    <a href="beranda.php" class="btn btn-outline-primary rounded-pill kembali"><b>KEMBALI</b></a>
 </div>
 <div class="container">
     <div class="row">

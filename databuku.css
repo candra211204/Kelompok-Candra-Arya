@@ -1,0 +1,64 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('assets/bootstrap/gambar/patern-book.jpg');
+    background-size: 500px;
+}
+
+.h1{
+    position: relative;
+    right: 80px;
+}
+
+.cari-buku{
+    position: relative;
+    right: -90px;
+}
+
+.cari:hover{
+    transition: 1s;
+    transform: rotateY(360deg);
+}
+
+.logo-buku{
+    position: relative;
+    left: -95px;
+}
+
+.tambah{
+    position: relative;
+    left: 10px;
+}
+
+.tambah:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.kembali{
+    position: relative;
+    left: 20px;
+}
+
+.kembali:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.pinjam:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.edit:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+.hapus:hover{
+    transition: 1s;
+    transform: translateY(-10px);
+}
+
+table{
+    border-radius: 10px;
+}

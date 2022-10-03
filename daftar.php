@@ -39,9 +39,10 @@ if (isset($_SESSION['nama'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar</title>
+    <link rel="stylesheet" href="daftar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="assets\bootstrap\css\bootstrap.min.css">
-    <link rel="stylesheet" href="daftar.css">
+    
 </head>
 <body>
 
@@ -96,7 +97,9 @@ if (isset($_SESSION['nama'])) {
     </form>
     
     </div>  -->
-
+    <div class="tombol-kembali">
+        <a href="beranda.php" class="btn btn-outline-primary rounded-pill kembali"><b>KEMBALI</b></a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -107,6 +110,7 @@ if (isset($_SESSION['nama'])) {
             <div class="col-md-6">
                 <div class="isi-daftar text-center">
                     <h3 class="judul-daftar"><b>SILAHKAN DAFTAR</b></h3>
+                    <br><br>
                     <form method="POST" action="">
                         <input type="text" class="form-control rounded-pill" name="nis" placeholder="NIS">
                         <br>
@@ -116,17 +120,19 @@ if (isset($_SESSION['nama'])) {
                         <br>
                         <input required type="password" class="form-control rounded-pill" name="password2" placeholder="Re-Type Password"  id="myInput2">
                         <br>
-                        <input type="checkbox" onclick="myFunction()" class="cekbok" id="cekbok">&nbsp;
-                        <label for="cekbok" class="label-cekbok">Show Password</label>
+                        <input type="checkbox" onclick="myFunction()" class="cek-password" id="cekbok">&nbsp;
+                        <label for="cekbok" class="show-password">Show Password</label>
+                        <br><br>
+                        <label for="jeniskelamin">Pilih Jenis Kelamin</label>
                         <br>
-                        <input name="jenis_kelamin"type="radio"  value="L" class="laki">L
-                        <input name="jenis_kelamin" type="radio" value="P" class="perempuan">P
-                        <br>
+                        <input name="jenis_kelamin"type="radio"  value="L" class="laki" id="jeniskelamin">Laki-Laki
+                        <input name="jenis_kelamin" type="radio" value="P" class="perempuan" id="jeniskelamin">Perempuan
+                        <br><br>
                         <input type="text" class="form-control rounded-pill" name="alamat" placeholder="Alamat">
                         <br>
                         <input type="text" class="form-control rounded-pill" name="id_kelas" placeholder="ID Kelas">
                         <br>
-                        <a href="" class="btn btn-outline-primary rounded-pill">SUBMIT</a>
+                        <a href="" class="btn btn-outline-primary rounded-pill tombol-submit" name="submit">SUBMIT</a>
                     </form>
                 </div>
             </div>
