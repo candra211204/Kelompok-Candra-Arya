@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Sep 2022 pada 08.28
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
+-- Waktu pembuatan: 03 Okt 2022 pada 06.58
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,8 +36,19 @@ CREATE TABLE `buku` (
   `penerbit` varchar(50) DEFAULT NULL,
   `cover` varchar(255) DEFAULT NULL,
   `sinopsis` text DEFAULT NULL,
-  `stok` int(3) DEFAULT NULL
+  `stok` int(200) NOT NULL,
+  `status` enum('Tersedia','Kosong') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `buku`
+--
+
+INSERT INTO `buku` (`id_buku`, `penulis`, `tahun`, `judul`, `kota`, `penerbit`, `cover`, `sinopsis`, `stok`, `status`) VALUES
+(2, 'andrea ffff', 2000, 'sang pemimpi', 'bangka', 'bentang', '', '', 200, 'Tersedia'),
+(4, 'ayu utami', 2000, 'bilangna fu', 'Surabaya', 'bentang', 'warna', 'cerita prajurit', 345, 'Tersedia'),
+(7, 'dee', 0000, '', '', '', '', '', 0, 'Tersedia'),
+(23, 'deee', 0000, '', '', '', '', '', 0, 'Tersedia');
 
 -- --------------------------------------------------------
 
@@ -75,6 +86,14 @@ CREATE TABLE `kelas` (
   `id_kelas` int(2) NOT NULL,
   `nama_kelas` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
+(1, 'IPA1'),
+(2, 'IPA2');
 
 -- --------------------------------------------------------
 
@@ -120,16 +139,48 @@ CREATE TABLE `petugas` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `role`
+--
+
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL,
+  `jabatan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `role`
+--
+
+INSERT INTO `role` (`id`, `jabatan`) VALUES
+(1, 'pegawai'),
+(2, 'siswa'),
+(3, 'siswa');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
   `nis` int(11) NOT NULL,
   `nama` varchar(50) DEFAULT NULL,
+  `password` varchar(200) NOT NULL,
   `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `alamat` varchar(50) DEFAULT NULL,
-  `id_kelas` int(2) DEFAULT NULL
+  `id_kelas` int(2) DEFAULT NULL,
+  `role` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`nis`, `nama`, `password`, `jenis_kelamin`, `alamat`, `id_kelas`, `role`) VALUES
+(2, 'arya', '321', 'L', 'jl.darmo', 1, 2),
+(12, 'pendingin', '12', 'L', 'Jl Sikatan no 37', 1, 2),
+(13, 'arya', '12', 'P', 'jl madura', 2, 2),
+(121212, 'admin', '123', 'L', 'jl.derkuku', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -184,11 +235,18 @@ ALTER TABLE `petugas`
   ADD PRIMARY KEY (`nip`);
 
 --
+-- Indeks untuk tabel `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`nis`),
-  ADD KEY `id_kelas` (`id_kelas`);
+  ADD KEY `id_kelas` (`id_kelas`),
+  ADD KEY `role` (`role`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -198,7 +256,13 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `role`
+--
+ALTER TABLE `role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -234,7 +298,8 @@ ALTER TABLE `pengembalian`
 -- Ketidakleluasaan untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`);
+  ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`),
+  ADD CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`role`) REFERENCES `role` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

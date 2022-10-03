@@ -60,9 +60,17 @@ include "config.php";
                         <?php 
                         if (isset($_POST['submit'])){
                             $sql = "UPDATE buku SET buku.status='Kosong' WHERE buku.id_buku='$id'";
+                            
+                            
                             $result = mysqli_query($conn, $sql);
 
-                        } ?>
+                        } else {
+                            $simpan= mysqli_query($conn, "INSERT INTO `peminjaman`(`id_detail_peminjaman`, `id_siswa`,`id_petugas`, `tgl_kembali` ")VALUES (NULL, '$nis', '$petugas', )
+                            
+                            
+                            
+                            
+                            ?>
 
                 
                 

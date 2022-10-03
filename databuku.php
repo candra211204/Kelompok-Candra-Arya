@@ -56,6 +56,7 @@ include "config.php";
                         <td><?= $data['stok'];  ?></td>
                         <td><?=$data['status']; ?></td>
                         <td><a href="peminjaman.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Pinjam</button></a></td>
+                        <td><a href="pengembalian.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Pengembalian</button></a></td>
                         <td><a href="edit.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-primary">Edit</button></a></td>
                         <td><a href="delete.php?id=<?php echo $data['id_buku'];?>"><button class="btn btn-danger">Delete</button></a></td>
                     </tr>

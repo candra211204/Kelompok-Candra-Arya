@@ -36,7 +36,41 @@ include "config.php";
 
             </thead>
             <tbody>
-            
+            <?php
+            $id= $_GET['id'];
+                $ambil = mysqli_query($conn, "SELECT * FROM buku WHERE id_buku='$id' ");
+                $data = mysqli_fetch_assoc($ambil);{
+                    ?>
+                    <tr>
+                        <td><?= $data['id_buku'] ?></td>
+                        <td><?= $data['penulis'] ?></td>
+                        <td><?= $data['tahun'] ?></td>
+                        <td><?= $data['judul'] ?></td>
+                        <td><?= $data['kota'] ?></td>
+                        <td><?= $data['penerbit'] ?></td>
+                        <td><?= $data['cover'] ?></td>
+                        <td><?= $data['sinopsis'];  ?></td>
+                        <td><?= $data['stok'];  ?></td>
+                        <td>
+                            <form action="" method="post">
+                                <button class="btn btn-primary" type="submit" name="submit">Dikembalikan</button>
+                            </form>
+                        </td>
+                
+                        <?php 
+                        if (isset($_POST['submit'])){
+                            $sql = "UPDATE buku SET buku.status='Tersedia' WHERE buku.id_buku='$id'";
+                            $result = mysqli_query($conn, $sql);
+
+                        } ?>
+
+                
+                
+                   
+                <?php
+                }
+                ?>
+                 </tr>
             </tbody>
         </table>
 
